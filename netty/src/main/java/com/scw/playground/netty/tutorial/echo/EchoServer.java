@@ -1,4 +1,4 @@
-package com.scw.playground.netty.tutorial;
+package com.scw.playground.netty.tutorial.echo;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -43,8 +43,8 @@ public class EchoServer {
             ChannelFuture future = bootstrap.bind(port).sync();
             future.channel().closeFuture().sync();
         } finally {
-            boss.shutdownGracefully();
             worker.shutdownGracefully();
+            boss.shutdownGracefully();
         }
     }
 
