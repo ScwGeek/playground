@@ -19,7 +19,7 @@ public class TimeClientHandler extends ChannelInboundHandlerAdapter {
         try {
             long currentTimeMillis = (in.readUnsignedInt() - 2208988800L) * 1000L;
             log.info("current time: {}", new Date(currentTimeMillis));
-            ctx.close();
+//            ctx.close();
         } finally {
             in.release();
         }
@@ -29,7 +29,7 @@ public class TimeClientHandler extends ChannelInboundHandlerAdapter {
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
 
         log.info("ChannelHandler caught exception: ", cause);
-        ctx.close();
+//        ctx.close();
     }
 
 }

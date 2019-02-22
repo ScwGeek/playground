@@ -31,8 +31,8 @@ public class TimeServer {
                     .childHandler(new ChannelInitializer<Channel>() {
                         protected void initChannel(Channel ch) throws Exception {
                             ch.pipeline()
-                                    .addLast(new TimeServerHandler())
-                                    .addLast(new EchoServerHandler());
+                                    .addLast(new TimeServerHandler());
+//                                    .addLast(new EchoServerHandler());
                         }
                     })
                     .option(ChannelOption.SO_BACKLOG, 128)
