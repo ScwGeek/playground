@@ -31,7 +31,7 @@ public class TimeServer {
                     .childHandler(new ChannelInitializer<Channel>() {
                         protected void initChannel(Channel ch) throws Exception {
                             ch.pipeline()
-                                    .addLast(new TimeServerHandler());
+                                    .addLast(new TimeEncoder(), new TimeServerHandler());
 //                                    .addLast(new EchoServerHandler());
                         }
                     })

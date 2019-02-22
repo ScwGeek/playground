@@ -39,10 +39,7 @@ public class TimeServerHandler extends ChannelInboundHandlerAdapter {
      * @param ctx
      */
     private void sendTime(ChannelHandlerContext ctx) {
-        ByteBuf timeBf = ctx.alloc().buffer(4);
-        timeBf.writeInt((int) (System.currentTimeMillis() / 1000L + 2208988800L));
-
-        ctx.writeAndFlush(timeBf);
+        ctx.writeAndFlush((int) (System.currentTimeMillis() / 1000L + 2208988800L));
     }
 
 }
