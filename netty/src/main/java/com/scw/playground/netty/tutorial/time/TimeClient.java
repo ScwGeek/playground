@@ -46,7 +46,7 @@ public class TimeClient {
                     .channel(NioSocketChannel.class)
                     .handler(new ChannelInitializer<Channel>() {
                         protected void initChannel(Channel ch) {
-                            ch.pipeline().addLast(new TimeClientHandler());
+                            ch.pipeline().addLast(new TimeDecoder(), new TimeClientHandler());
                         }
                     });
 
